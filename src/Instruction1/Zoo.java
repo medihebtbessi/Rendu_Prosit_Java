@@ -4,16 +4,16 @@ public class Zoo {
    Animal[] animals;
    String name;
    String city;
-   int  nbrCages;
+  final int  nbrCages=25;
+   int nbAnimaux=0;
 
-   public Zoo(String name, String city, int nbrCages) {
+   public Zoo(String name, String city) {
       this.animals = new Animal[nbrCages];
       this.name = name;
       this.city = city;
-      this.nbrCages = nbrCages;
    }
    public  void displayZoo(){
-      System.out.println("Name "+name+" City "+city+" nbrCages "+nbrCages);
+      System.out.println("Name "+name+" City "+city+" nbrCages "+nbrCages+" nbAnimaux "+nbAnimaux);
 
    }
 
@@ -23,6 +23,7 @@ public class Zoo {
          for (int i = 0; i < nbrCages; i++) {
             if(animals[i]!=null){
                animals[i] = animal;
+               nbAnimaux++;
                etat=true;
                break;
          }
@@ -55,13 +56,24 @@ public class Zoo {
    }
 
    public boolean removeAnimal(Animal animal){
-      for (int i=0;i<animals.length;i++){
+      for (int i=0;i<nbAnimaux;i++){
          if (animal.name.equals(animals[i].name)){
-            animals[i]=animals[animals.length-1];
-            nbrCages--;
+            animals[i]=animals[nbAnimaux-1];
+            nbAnimaux--;
             return true;
          }
       }
       return false;
+   }
+
+   public boolean isZooFull(){
+     return nbAnimaux==nbrCages;
+   }
+   public Zoo comparerZoo(Zoo z1, Zoo z2){
+      if (z1.nbAnimaux>z2.nbAnimaux)
+         return z1;
+      else
+         return z2;
+      
    }
 }
