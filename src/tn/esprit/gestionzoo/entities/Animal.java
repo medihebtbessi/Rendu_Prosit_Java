@@ -53,4 +53,14 @@ public class Animal {
     public void displayAnimal(){
         System.out.println("Family "+family+" Name "+name+" Age "+age+" isMammal "+isMammal);
     }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "family='" + family + '\'' +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", isMammal=" + isMammal +
+                '}';
+    }
 }
