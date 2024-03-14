@@ -1,6 +1,7 @@
-package Instruction1;
+package tn.esprit.gestionzoo.main;
 
-import java.util.Scanner;
+import tn.esprit.gestionzoo.entities.Animal;
+import tn.esprit.gestionzoo.entities.Zoo;
 
 public class ZooManagement {
     public static void main(String[] args) {
@@ -17,7 +18,7 @@ public class ZooManagement {
         System.out.println(zooName+" comporte "+nbrCages+" cages");*/
 
         Animal lion =new Animal("animal","animal",25,true);
-        Zoo myZoo =new Zoo("zooooo","zoooo",2);
+        Zoo myZoo =new Zoo("zooooo","zoooo");
         myZoo.displayZoo();
        /* System.out.println(myZoo);
         System.out.println(myZoo.toString());*/
